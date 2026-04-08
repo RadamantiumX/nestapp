@@ -43,3 +43,6 @@ nest g mo <<>module_name>
 ```
 
 All this commands do the same thing.
+
+Video: https://www.youtube.com/watch?v=wsqcg5ZtUMM
+at the 26:53
