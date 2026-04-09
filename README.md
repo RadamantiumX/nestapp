@@ -85,3 +85,5 @@ Adding Services to current folder:
 ```bash
 nest g services <<folder-name>>
 ```
+
+At the same way, we can omit the *"spec"* folder with the flag *--no-spec*.

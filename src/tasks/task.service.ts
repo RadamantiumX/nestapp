@@ -8,4 +8,20 @@ export class TaskService{
     getTasks(){
         return ['Task 1', 'Task 2', 'Task 3']
     }
+
+    createTask(){
+        return 'creando tareas'
+    }
+
+    updateTask(){
+        return 'actualizando tareas'
+    }
+
+    deleteTask(){
+        return 'eliminando tareas'
+    }
+
+    updateTaskStatus(){
+        return 'actualizando el estado de una tareas'
+    }
 }
