@@ -44,5 +44,44 @@ nest g mo <<>module_name>
 
 All this commands do the same thing.
 
-Video: https://www.youtube.com/watch?v=wsqcg5ZtUMM
-at the 26:53
+
+## CONTROLLERS
+
+We can generate CONTROLLERS files with this command into separate folder:
+
+```bash
+nest generate controller <<controller-name>>
+```
+
+If we want generate a new controller into particular folder, run this commando:
+
+```bash
+nest generate controller <<folder-name>>
+
+```
+
+*MUST BE A EXISTING FOLDER*
+
+Or 
+
+```bash
+nest g co <<folder-name || controller-name>>
+```
+
+Without **"spec"** file:
+
+```bash
+nest g co <<folder-name || controller-name>> --no-spec
+```
+
+We need adding the flag *"--no-spec"*.
+
+
+
+## SERVICES
+
+Adding Services to current folder:
+
+```bash
+nest g services <<folder-name>>
+```
