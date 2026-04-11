@@ -1,5 +1,7 @@
-import { Controller, Get, Post, Put, Delete, Patch } from "@nestjs/common";
+import { Controller, Get, Post, Put, Delete, Patch, Body, Query, Param, UsePipes, ValidationPipe } from "@nestjs/common";
 import { TaskService } from "./task.service";
+import type { CreateTaskDto } from "./dto/create-task.dto";
+import type { UpdateTaskDto } from "./dto/update-task.dto";
 
 // Decorator
 @Controller('/tasks') // Main URL ENDPOINT
@@ -12,8 +14,15 @@ export class TaskController{
 
     // Methods 
     @Get() // Decorator --> Need endpoint URL
-    getAllTasks(){
+    getAllTasks(@Query() query: any){
+       console.log(query)
        return this.tasksService.getTasks()
+    }
+    
+    @Get('/:id')  // Get a param
+    getTask(@Param('id') id:string){
+        console.log(id)
+        return this.tasksService.getTask(parseInt(id))
     }
 
     //  @Get('/') // Decorator --> Need endpoint URL
@@ -22,13 +31,14 @@ export class TaskController{
     // }
 
     @Post()
-    createTask(){
-        return this.tasksService.createTask()
+    @UsePipes(new ValidationPipe())
+    createTask(@Body() task: CreateTaskDto){
+        return this.tasksService.createTask(task)
     }
 
     @Put() // Comple update
-    updateTask(){
-        return this.tasksService.updateTask()
+    updateTask(@Body() task:UpdateTaskDto){
+        return this.tasksService.updateTask(task)
     }
 
     @Delete()
