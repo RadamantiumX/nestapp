@@ -98,3 +98,25 @@ nest g pipe <<route-to-folder>>
 ```
 
 Can add the *--no-spec* flag to avoid the *spec* file.
+
+
+## Guards on NEST JS
+
+Protect the business logic with some layer of security. We can generated with the nest CLI.
+
+```bash
+nest g guard <<current-folder>>
+```
+
+Like the others, we can omit the *spec* file with the flag *--no-spec*.
+
+This is useful for users roles, we can manage that's request with the GUARD logic.
+
+
+## Middlewares
+
+At the same, the middleware can be generated with the CLI:
+
+```bash
+nest g mi <<middlware-name>>
+```
