@@ -87,3 +87,14 @@ nest g services <<folder-name>>
 ```
 
 At the same way, we can omit the *"spec"* folder with the flag *--no-spec*.
+
+
+## PIPES VALIDATIONS
+
+To generate "pipes validations" use the next nest cli:
+
+```bash
+nest g pipe <<route-to-folder>>
+```
+
+Can add the *--no-spec* flag to avoid the *spec* file.

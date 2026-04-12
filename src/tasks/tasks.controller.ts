@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Patch, Body, Query, Param, UsePipes, ValidationPipe } from "@nestjs/common";
 import { TaskService } from "./task.service";
-import type { CreateTaskDto } from "./dto/create-task.dto";
-import type { UpdateTaskDto } from "./dto/update-task.dto";
+import { CreateTaskDto } from "./dto/create-task.dto";
+import { UpdateTaskDto } from "./dto/update-task.dto";
 
 // Decorator
 @Controller('/tasks') // Main URL ENDPOINT
@@ -31,7 +31,6 @@ export class TaskController{
     // }
 
     @Post()
-    @UsePipes(new ValidationPipe())
     createTask(@Body() task: CreateTaskDto){
         return this.tasksService.createTask(task)
     }
