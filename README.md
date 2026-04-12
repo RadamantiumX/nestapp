@@ -120,3 +120,14 @@ At the same, the middleware can be generated with the CLI:
 ```bash
 nest g mi <<middlware-name>>
 ```
+
+
+## Resources
+
+We can combine all the resouces CLI's, with only one.
+
+```bash
+nest g resource <<resource-name>>
+```
+
+When run that command, we need complete the questions. For this example we choice the REST API option.
