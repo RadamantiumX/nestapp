@@ -131,3 +131,12 @@ nest g resource <<resource-name>>
 ```
 
 When run that command, we need complete the questions. For this example we choice the REST API option.
+
+
+## Using PRISMA ORM with NEST JS
+
+First install Prisma:
+
+```bash
+npm install prisma --save-dev
+```
