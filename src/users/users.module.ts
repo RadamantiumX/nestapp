@@ -3,26 +3,27 @@ import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 import { LoggerMiddleware } from './logger/logger.middleware';
 import { AuthMiddleware } from './auth/auth.middleware';
+import { PrismaService } from 'src/prisma.service';
 
 @Module({
   controllers: [UsersController],
-  providers: [UsersService]
+  providers: [UsersService, PrismaService]
 })
 // The MIDDLEWARES can be chained with the "apply" method
 export class UsersModule implements NestModule{
   configure(consumer: MiddlewareConsumer) {
     // Apply the middleware on routes ('/route') or methods ({path: '/route', method: 'GET'})
-    consumer.apply(LoggerMiddleware).forRoutes({
+//     consumer.apply(LoggerMiddleware).forRoutes({
       
-        path: '/users',
-        method: RequestMethod.GET
+//         path: '/users',
+//         method: RequestMethod.GET
       
-    },
-    {
-      path: '/users',
-      method: RequestMethod.POST
+//     },
+//     {
+//       path: '/users',
+//       method: RequestMethod.POST
 
-    }
-).apply(AuthMiddleware).forRoutes('users')
+//     }
+// ).apply(AuthMiddleware).forRoutes('users')
   }
 }
