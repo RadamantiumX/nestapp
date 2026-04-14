@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: radamantium
+      POSTGRES_PASSWORD: seba2010
+      POSTGRES_DB: nestdb
+    ports:
+      -  5499:5432

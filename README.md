@@ -140,3 +140,9 @@ First install Prisma:
 ```bash
 npm install prisma --save-dev
 ```
+
+Adding DOCKER FILE and change the *.env* value, *DATABASE_URL*.
+
+```.env
+DATABASE_URL="postgresql://<username>:<password>@localhost:5499/<db-name>?schema=public"
+```
